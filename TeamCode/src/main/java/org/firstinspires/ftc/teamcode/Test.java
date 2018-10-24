@@ -10,7 +10,6 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 public class Test extends LinearOpMode {
 
     @Override
-    public void runOpMode() {
-        
+    public void runOpMode()
     }
 }
