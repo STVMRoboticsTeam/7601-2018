@@ -19,6 +19,7 @@ public class BuyMeACokePls extends LinearOpMode {
             telemetry.addLine("-- No Lift Motor --");
         }
         telemetry.addLine("Made by 8497 because 7601 can't make their own code.");
+        telemetry.addLine("Improved by Brig");
         telemetry.update();
         waitForStart();
         while(opModeIsActive()) {
@@ -27,16 +28,22 @@ public class BuyMeACokePls extends LinearOpMode {
             if(Math.abs(ly) > 0.1f) {
                 left.setPower(ly*ly*ly);
                 right.setPower(ly*ly*ly);
-            } else if(Math.abs(lx) > 0.1f) {
-                left.setPower(-lx);
-                right.setPower(lx);
+            } if(Math.abs(lx) > 0.1f) {
+                left.setPower(lx);
+                right.setPower(-lx);
+            } else {
+                left.setPower(0);
+                right.setPower(0);
             }
             if(lift != null) {
                 if(gamepad1.y) {
                     lift.setPower(0.2f);
                 } else if(gamepad1.a) {
                     lift.setPower(-0.2f);
+                } else {
+                    lift.setPower(0);
                 }
+
             }
         }
     }
